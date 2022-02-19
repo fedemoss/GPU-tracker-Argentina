@@ -328,15 +328,16 @@ def price_tracker(gpu_type, thres, PATH, info=False, interval=21600):
     while True:
         df = gpu_tracker(gpu_type, info, PATH)
         df_filtered = filtered_df(df, thres)
-        df_filtered.to_csv('gpu.csv')
+        df_filtered.to_csv('gpu_{}.csv'.format(gpu_type.replace(' ','')))
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         print('Busqueda actualizada a las {} \n El mejor resultado fue: ${} de {}'.format(current_time, df_filtered['Price'][0], df_filtered['Site'][0]))
         time.sleep(interval)
+    return df_filtered
     
 #%%
 #my situation
-PATH = r'C:\Users\mossney\Documents\Selenium\chromedriver.exe'
-
-price_tracker('3060 ti', 250000, PATH, False , 60)
+#PATH = r'C:\Users\mossney\Documents\Selenium\chromedriver.exe'
+#
+#price_tracker('3060 ti', 250000, PATH, False , 60)
 
