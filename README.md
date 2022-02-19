@@ -34,11 +34,31 @@ Ademas, devuelve un .csv (gpu.csv) con todas las placas encontradas, ordenadas e
 
 El código se puede ampliar jugando con la función price_tracker. 
 
+**Actualización 18/02**
+
+Se me ocurrió que tal vez estaba bueno lanzar esto en formato web. Pensando en modo crypto, tras ir a whattomine, ver que placas caen tienen la mejor relación mh/costo, se podría hacer algo para visualzar en vivo los mejores sitios en donde comprar las placas. A modo de incio, usé Flask para crear localmente un sitio web y hacer un display del top best prices for GPUs para las 3 GPU que considero asequibles para minar ETH hoy (es febrero del 2022 y ETH 2.0 aún no salio).
+
+Se agregaron los archivos .py:
+
+  - GPU_tracker_run_580.py
+  - GPU_tracker_run_1660.py
+  - GPU_tracker_run_3070.py
+
+Que hacen alusión a las placas rx580, 1660 super y rtx3070 y corren cada uno al archivo madre GPU_tracker_Argentina.py
+
+y se incorporó el uso de Flask en el archivo:
+
+  - flask_GPU.py
+
+Para correr esto, poner todos los archivos en una misma carpeta, ejecutar los GPU_tracker_run_x.py (por default corren cada 24 hs) y luego correr el flask_GPU.py. Este último requiere de Flask por lo que *pip install flask* es necesario. Tiene por default un Debug=True, esto significa que todos los cambios que hagamos a los otros archivos se verán reflejados en la app web automáticamente.  
+
 A futuro:
 
-  -Automatizar una funcion para mandar mails al usuario cuando se haya encontrado el precio que el usuario queria
+  + Webpage GPU tracker Live
+
+  + Automatizar una funcion para mandar mails al usuario cuando se haya encontrado el precio que el usuario queria
   
-  -Graficar en vivo los valores de las placas según cada sitio
+  + Graficar en vivo los valores de las placas según cada sitio
   
 
 
