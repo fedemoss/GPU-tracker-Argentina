@@ -321,7 +321,7 @@ def filtered_df(df_total, thres = 0):
     return df_filtered
 
 #La funcion final
-def price_tracker(gpu_type, thres, PATH, engine=None, SQL=False, CSV=False, info=False, interval=21600, N=15):
+def price_tracker(gpu_type, thres, PATH, engine=None, SQL=False, CSV=False, info=False, interval=21600, N=-1):
     import time
     from datetime import datetime
     global df_top

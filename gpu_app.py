@@ -53,4 +53,3 @@ def rx6700xt():
     rx6700xt_list = [dict(row) for row in cur.execute("SELECT * FROM rx6700xt").fetchall()]
     return render_template('6700xt.html', items=rx6700xt_list)
 
-app.run(debug=True)
