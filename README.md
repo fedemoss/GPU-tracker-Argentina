@@ -64,6 +64,11 @@ A futuro:
   
   + Graficar en vivo los valores de las placas según cada sitio
   
+Algunos screenshots del site:
+![screenshot1](https://user-images.githubusercontent.com/54726553/156257563-e589d1a5-999e-476e-8006-41b644cac68d.png)
 
+![screenshot2](https://user-images.githubusercontent.com/54726553/156257598-b72dd535-075b-4a41-8234-cdf3eac4656f.png)
+
+![screenshot3](https://user-images.githubusercontent.com/54726553/156257796-d5f02fe9-2a7f-4abe-85be-c398d79d2c6e.png)
 
 *Hecho con amor by mossney.*
