@@ -47,12 +47,14 @@ Se agregaron los archivos .py:
   - GPU_tracker_run.py
   - database_connection.py
   - gpu_app.py
-  - templates folder (folder con los templates de la página)
+  - templates folder (folder con los .html que hacen página)
 
 
 Para correr esto, poner todos los archivos en una misma carpeta, ejecutar GPU_tracker_run.py (por default corren cada 24 hs). 
 
 Se requiere de Flask por lo que *pip install flask* es necesario. Tiene por default un Debug=True, esto significa que todos los cambios que hagamos a los otros archivos se verán reflejados en la app web automáticamente.  
+
+Comentario: Nada de crear mis propios css o JS. Utilicé Bootstrap para el layout de la pagina. (https://getbootstrap.com/)
 
 A futuro:
 
