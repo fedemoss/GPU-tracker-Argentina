@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    GPUs
+{% endblock %}
+
+{% block content %}
+<h1>GPUs</h1>
+    <div class="container">
+        <a class="btn btn-dark" href="{{ url_for('rtx3060ti') }}" role="button">RTX 3060ti</a>
+        <a class="btn btn-dark" href="{{ url_for('rtx3070') }}" role="button">RTX 3070</a>
+        <a class="btn btn-dark" href="{{ url_for('rtx3080') }}" role="button">RTX 3080</a>
+        <a class="btn btn-dark" href="{{ url_for('rtx3090') }}" role="button">RTX 3090</a>
+        <a class="btn btn-dark" href="{{ url_for('super1660') }}" role="button">1660 super</a>
+        <a class="btn btn-dark" href="{{ url_for('rx580') }}" role="button">RX 580</a>
+        <a class="btn btn-dark" href="{{ url_for('rx6700xt') }}" role="button">RX 6700 xt</a>
+    </div>
+      
+{% endblock %}
