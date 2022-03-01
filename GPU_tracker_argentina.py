@@ -321,23 +321,21 @@ def filtered_df(df_total, thres = 0):
     return df_filtered
 
 #La funcion final
-def price_tracker(gpu_type, thres, PATH, info=False, interval=21600):
+def price_tracker(gpu_type, thres, PATH, engine=None, SQL=False, CSV=False, info=False, interval=21600, N=15):
     import time
     from datetime import datetime
     global df_top
     while True:
         df = gpu_tracker(gpu_type, info, PATH)
         df_filtered = filtered_df(df, thres)
-        df_filtered.to_csv('gpu_{}.csv'.format(gpu_type.replace(' ','')))
+        if CSV==True: #to CSV
+          df_filtered.to_csv('gpu_{}.csv'.format(gpu_type.replace(' ','')))
+        if SQL==True: #to SQL (I previously need and engine -like SQLite3-)
+          df_noinfo = df_filtered.drop(['Brand','Edition','Version'], axis=1).iloc[:N]
+          df_noinfo.to_sql(gpu_type.replace(' ',''), con=engine, if_exists='replace')
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
         print('Busqueda actualizada a las {} \n El mejor resultado fue: ${} de {}'.format(current_time, df_filtered['Price'][0], df_filtered['Site'][0]))
         time.sleep(interval)
     return df_filtered
     
-#%%
-#my situation
-#PATH = r'C:\Users\mossney\Documents\Selenium\chromedriver.exe'
-#
-#price_tracker('3060 ti', 250000, PATH, False , 60)
-
